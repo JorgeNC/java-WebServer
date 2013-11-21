@@ -13,7 +13,9 @@ import org.apache.log4j.Logger;
 public class WebServer extends Thread {
 
 	private static Logger log = Logger.getLogger(WebServer.class);
-
+        
+        //private static final Config config = new Config();
+                                                //8080    
 	private static final int DEFAULT_PORT = 8080;
 
 	private static final int N_THREADS = 3;
