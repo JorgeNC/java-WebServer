@@ -3,11 +3,13 @@
 package com.dasanjos.java.config;
 
 import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Root;
 
 /**
  *
  * @author julialonso
  */
+@Root
 public class Data {
     
     @Element(name="numThreads")

@@ -14,11 +14,11 @@ public class WebServer extends Thread {
 
 	private static Logger log = Logger.getLogger(WebServer.class);
         
-        //private static final Config config = new Config();
+        private static final Config config = new Config();
                                                 //8080    
-	private static final int DEFAULT_PORT = 8080;
+	private static final int DEFAULT_PORT = config.getPuerto();
 
-	private static final int N_THREADS = 3;
+	private static final int N_THREADS = config.getNumThreads();
 
 	public static void main(String args[]) {
 		try {

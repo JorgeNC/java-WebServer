@@ -1,5 +1,6 @@
 package com.dasanjos.java.http;
 
+import com.dasanjos.java.Config;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -17,7 +18,7 @@ import org.apache.log4j.Logger;
  * and Headers http://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html
  */
 public class HttpResponse {
-
+        
 	private static Logger log = Logger.getLogger(HttpResponse.class);
 
 	public static final String VERSION = "HTTP/1.0";
@@ -36,7 +37,8 @@ public class HttpResponse {
 				try {
 					fillHeaders(Status._200);
 					// TODO fix dir bug http://localhost:8080/src/test
-					File file = new File("." + req.uri);
+					File file = new File(Config.getDocRootPath() + req.uri);
+                                        System.out.println(file.getAbsolutePath());
 					if (file.isDirectory()) {
 						headers.add(ContentType.HTML.toString());
 						StringBuilder result = new StringBuilder("<html><head><title>Index of ");

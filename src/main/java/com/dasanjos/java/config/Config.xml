@@ -1,5 +1,5 @@
-<Config>
-    <numThreads> 3 </numThreads>
-    <document_root>  </document_root>
-    <puerto> 8082 </puerto>
-</Config>
+<configuration>
+    <numThreads>3</numThreads>
+    <document_root>/Applications/MAMP/htdocs</document_root>
+    <puerto>8084</puerto>
+</configuration>
