@@ -12,21 +12,26 @@ import org.simpleframework.xml.core.Persister;
  * @author julialonso
  */
 public final class Config {
-    
-    private static final String PATH = "./src/main/java/com/dasanjos/java/config/Config.xml";
+      
     private static final Serializer serializer = new Persister();
-    private static final File source= new File(PATH);
     
     private int numThreads;
     private static String docRootPath;
     private int puerto;
+    private boolean isConfigOK = false;
     
     static Data data;
     
-    public Config(){
+    public Config(String path){
         
         try {
-            data = serializer.read(Data.class, source);
+            File source = new File(path);
+            if(!source.exists()){
+                this.isConfigOK = false;
+            }else{
+                data = serializer.read(Data.class, source);
+                this.isConfigOK = true;
+            }
             
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -48,6 +53,10 @@ public final class Config {
 
     public int getPuerto() {
         return this.puerto;
+    }
+    
+    public boolean isConfigOK(){
+        return this.isConfigOK;
     }
     
 }

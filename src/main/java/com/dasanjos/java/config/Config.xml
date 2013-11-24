@@ -1,5 +1,5 @@
 <configuration>
     <numThreads>3</numThreads>
     <document_root>/Applications/MAMP/htdocs</document_root>
-    <puerto>8084</puerto>
+    <puerto>8086</puerto>
 </configuration>
